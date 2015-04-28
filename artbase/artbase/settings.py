@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_mb3cje-xp07=q$#o72ldn7d^#1y_rvd_p0wcsxec#t&6gtu2r'
+SECRET_KEY = '=4(9e_g@t)tp^#nrh^v2fvree*)lpk-$pcy^es^=rd33wl9+$*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -58,12 +58,8 @@ WSGI_APPLICATION = 'artbase.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'artbase',
-	'USER': 'artbaseUser',
-	'PASSWORD': 'artbase123',
-	'HOST': 'localhost',
-	'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
