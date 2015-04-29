@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +55,7 @@ ROOT_URLCONF = 'artbase.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,11 +77,7 @@ WSGI_APPLICATION = 'artbase.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'artbase',
-	'USER': 'root',
-	'PASSWORD': '',
-	'HOST': 'localhost',
-	'PORT': '3306',
+        'NAME': '/var/lib/mysql/artbase',
     }
 }
 
