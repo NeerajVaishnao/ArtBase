@@ -9,7 +9,8 @@ class artist(models.Model):
 		return self.artistName
 
 class customer(models.Model):
-	customerName = models.CharField(primary_key = True, max_length = 20)
+	customerId = models.IntegerField(primary_key = True, db_column = 'customerId')
+	customerName = models.CharField( max_length = 20)
 	customerAddress = models.CharField(max_length = 20)
 	customerAmount = models.IntegerField(default = 0)
 	customerLikeArtist = models.ForeignKey(artist, db_column = 'artistName')
@@ -21,6 +22,7 @@ class artwork(models.Model):
 	artworkYear = models.IntegerField(default = 0)
 	artworkPrice = models.IntegerField(default = 0)
 	artworkArtist = models.ForeignKey(artist, db_column = 'artistName')
+	artworkType = models.CharField(default = 'NULL')
 	def __str__(self):
 		return self.artworkTitle
 	
@@ -29,3 +31,9 @@ class group(models.Model):
 	groupArtist = models.ForeignKey(artist, db_column = 'artistName', default = 'NULL')
 	def __str__(self):
 		return self.groupName
+
+class likeGroup(models.Model):
+	likeGroupCustomerId = models.ForeignKey(customer, db_column = 'customerId')
+	likeGroupName = models.CharField(default = 'NULL')
+	def __str__(self):
+		return self.likeGroupName
