@@ -14,7 +14,8 @@ class customer(models.Model):
 	customerAddress = models.CharField(max_length = 20)
 	customerAmount = models.IntegerField(default = 0)
 	def __str__(self):
-		return self.customersName
+		return self.customerName
+	
 
 class artwork(models.Model):
 	artworkTitle = models.CharField(primary_key = True, max_length = 20)
@@ -30,22 +31,19 @@ class group(models.Model):
 	def __str__(self):
 		return self.groupName
 
-class likeGroup(models.Model):
-	likeGroupCustomerId = models.ForeignKey(customer, db_column = 'customersId')
-	likeGroupName = models.CharField(default = 'NULL', max_length = 20)
-	def __str__(self):
-		return self.likeGroupName
+#class likeGroup(models.Model):
+#	likeGroupCustomerId = models.IntegerField(default = 0)
+#	likeGroupName = models.ForeignKey(group, db_column = 'groupName')
+#	def __str__(self):
+#		return self.likeGroupName
 
 class classifiedInto(models.Model):
 	classifiedIntoGroupName = models.ForeignKey(group, db_column = 'groupName')
 	classifiedIntoArtworkTitle = models.ForeignKey(artwork, db_column = 'artworkTitle')
-	def __str__(self):
-		return self.classifiedGroupName
+
 
 class likeArtist(models.Model):
 	likeArtistCustomerId = models.ForeignKey(customer, db_column = 'customerId')
 	likeArtistArtistName = models.ForeignKey(artist, db_column = 'artistName')
-	def __str__(self):
-		return self.likeArtistArtistName
 
 

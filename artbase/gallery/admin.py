@@ -30,12 +30,11 @@ class groupAdmin(admin.ModelAdmin):
 	search_fields = ['groupName']
 admin.site.register(group, groupAdmin)
 
-from .models import likeGroup
-class likeGroupAdmin(admin.ModelAdmin):
-	list_display = ('likeGroupCustomerId', 'likeGroupName')
-	list_filter = ['likeGroupCustomerId', 'likeGroupName']
-	search_fields = ['likeGroupCustomerId', 'likeGroupName']
-admin.site.register(likeGroup, likeGroupAdmin)
+#from .models import likeGroup
+#class likeGroupAdmin(admin.ModelAdmin):
+#	list_filter = [ 'likeGroupName']
+#	search_fields = ['likeGroupName']
+#admin.site.register(likeGroup, likeGroupAdmin)
 
 from .models import likeArtist
 class likeArtistAdmin(admin.ModelAdmin):
