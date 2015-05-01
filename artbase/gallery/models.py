@@ -31,11 +31,11 @@ class group(models.Model):
 	def __str__(self):
 		return self.groupName
 
-#class likeGroup(models.Model):
-#	likeGroupCustomerId = models.IntegerField(default = 0)
-#	likeGroupName = models.ForeignKey(group, db_column = 'groupName')
-#	def __str__(self):
-#		return self.likeGroupName
+class likeGroup(models.Model):
+	likeGroupCustomerId = models.IntegerField(default = 0)
+	likeGroupName = models.ForeignKey(group, db_column = 'groupName')
+	def __str__(self):
+		return self.likeGroupName
 
 class classifiedInto(models.Model):
 	classifiedIntoGroupName = models.ForeignKey(group, db_column = 'groupName')
